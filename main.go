@@ -13,5 +13,9 @@ func main() {
 			"message": "pong",
 		})
 	})
+	r.GET("/hello/:name", func(c *gin.Context) {
+		name := c.Param("name")
+		c.String(http.StatusOK, "Hello, %s!", name)
+	})
 	r.Run(":3000")
 }
