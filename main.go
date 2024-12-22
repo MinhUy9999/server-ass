@@ -17,5 +17,25 @@ func main() {
 		name := c.Param("name")
 		c.String(http.StatusOK, "Hello, %s!", name)
 	})
+	// viết thêm user
+	r.GET("/user/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.String(http.StatusOK, "User with ID = %s", id)
+	})
+	// viết thêm product
+	r.GET("/product/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.String(http.StatusOK, "Product with ID = %s", id)
+	})
+	// viết thêm cart
+	r.GET("/cart/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.String(http.StatusOK, "Cart with ID = %s", id)
+	})
+	// viết thêm order
+	r.GET("/order/:id", func(c *gin.Context) {
+		id := c.Param("id")
+		c.String(http.StatusOK, "Order with ID = %s", id)
+	})
 	r.Run(":3000")
 }
